@@ -7,7 +7,7 @@ export interface ServerMessage {
   stdout?: string;
 }
 
-export type Language = 'python' | 'nodejs' | 'bash' | 'java' | 'prolog';
+export type Language = 'python' | 'nodejs' | 'bash' | 'java' | 'prolog' | 'go';
 export type Instruction = 'start' | 'stop' | 'stdin';
 
 interface BaseMessage {
