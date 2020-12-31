@@ -1,5 +1,6 @@
-import { ClientMessage, Instruction, Language, ServerMessage } from './types';
+import { ClientMessage, Instruction, ServerMessage } from './types';
 import { instructions, statuses, stripObject } from './util';
+import { SupportedLanguage } from 'palcode-types';
 
 function decodeServerMessage(messageComponents: string[]): ServerMessage | undefined {
     const statusIndex = parseInt(messageComponents[1]);
@@ -40,7 +41,7 @@ function decodeClientMessage(messageComponents: string[]): ClientMessage | undef
         return;
     }
 
-    const language = messageComponents[3] as Language;
+    const language = messageComponents[3] as SupportedLanguage;
     const schoolId = messageComponents[4];
 
     let stdin = messageComponents[5];

@@ -1,3 +1,5 @@
+import { SupportedLanguage } from 'palcode-types';
+
 export type ServerStatus = 200 | 400 | 404 | 500;
 
 export interface ServerMessage {
@@ -7,7 +9,6 @@ export interface ServerMessage {
   stdout?: string;
 }
 
-export type Language = 'python' | 'nodejs' | 'bash' | 'java' | 'prolog' | 'go' | 'cpp';
 export type Instruction = 'start' | 'stop' | 'stdin';
 
 interface BaseMessage {
@@ -18,7 +19,7 @@ interface BaseMessage {
 export interface StartMessage extends BaseMessage {
   schoolId: string;
   instruction: 'start';
-  language: Language;
+  language: SupportedLanguage;
 }
 
 export interface StopMessage extends BaseMessage {
