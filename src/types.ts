@@ -40,3 +40,8 @@ export function isServerMessage(message: any): message is ServerMessage {
 export function isClientMessage(message: any): message is ClientMessage {
   return typeof message.projectId === 'string';
 }
+
+export interface ClientLspInitMessage {
+  projectId: string;
+  language: SupportedLanguage;
+}

@@ -1,4 +1,4 @@
-import { ClientMessage, Instruction, ServerMessage } from './types';
+import { ClientLspInitMessage, ClientMessage, Instruction, ServerMessage } from './types';
 import { instructions, statuses, stripObject } from './util';
 import { SupportedLanguage } from 'palcode-types';
 
@@ -76,3 +76,19 @@ function decode(message: string): ClientMessage | ServerMessage | undefined {
 }
 
 export {decode};
+
+function encodeLspInit(message: string): ClientLspInitMessage | undefined {
+    if (!message.startsWith('init/')) {
+        return;
+    }
+
+    const messageComponents = message.split('/');
+    if (messageComponents.length !== 2) {
+        return;
+    }
+
+    return {
+        projectId: messageComponents[1],
+        language: messageComponents[2] as SupportedLanguage,
+    };
+}

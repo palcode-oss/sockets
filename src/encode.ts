@@ -1,4 +1,4 @@
-import { ClientMessage, isClientMessage, isServerMessage, ServerMessage } from './types';
+import { ClientLspInitMessage, ClientMessage, isClientMessage, isServerMessage, ServerMessage } from './types';
 import { instructions, statuses } from './util';
 
 function encodeServerMessage(message: ServerMessage): string {
@@ -54,3 +54,9 @@ function encode(message: any): string {
 }
 
 export {encode};
+
+function encodeLspInit(message: ClientLspInitMessage): string {
+    return `init/${message.projectId}/${message.projectId}`;
+}
+
+export {encodeLspInit};
