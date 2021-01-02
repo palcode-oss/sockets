@@ -77,7 +77,7 @@ function decode(message: string): ClientMessage | ServerMessage | undefined {
 
 export {decode};
 
-function encodeLspInit(message: string): ClientLspInitMessage | undefined {
+function decodeLspInit(message: string): ClientLspInitMessage | undefined {
     if (!message.startsWith('init/')) {
         return;
     }
@@ -92,3 +92,5 @@ function encodeLspInit(message: string): ClientLspInitMessage | undefined {
         language: messageComponents[2] as SupportedLanguage,
     };
 }
+
+export {decodeLspInit};
