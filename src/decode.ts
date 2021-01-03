@@ -83,12 +83,13 @@ function decodeLspInit(message: string): ClientLspInitMessage | undefined {
     }
 
     const messageComponents = message.split('/');
-    if (messageComponents.length !== 2) {
+    if (messageComponents.length !== 4) {
         return;
     }
 
     return {
         projectId: messageComponents[1],
+        schoolId: messageComponents[3],
         language: messageComponents[2] as SupportedLanguage,
     };
 }

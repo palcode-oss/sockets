@@ -43,5 +43,6 @@ export function isClientMessage(message: any): message is ClientMessage {
 
 export interface ClientLspInitMessage {
   projectId: string;
+  schoolId: string;
   language: SupportedLanguage;
 }

@@ -56,7 +56,7 @@ function encode(message: any): string {
 export {encode};
 
 function encodeLspInit(message: ClientLspInitMessage): string {
-    return `init/${message.projectId}/${message.projectId}`;
+    return `init/${message.projectId}/${message.language}/${message.schoolId}`;
 }
 
 export {encodeLspInit};
