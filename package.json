@@ -14,6 +14,6 @@
     "prepublishOnly": "yarn run build"
   },
   "peerDependencies": {
-    "palcode-types": "^1.0.1"
+    "palcode-types": "^1.1.0"
   }
 }
